@@ -1,39 +1,44 @@
 # 🚀 Antigravity Kit
 
-> **Bộ công cụ mở rộng khả năng AI Agent** - Tập hợp skills, rules và workflows, UX/UI Pro Max để tăng cường năng lực cho AI coding assistants.
+> **AI Agent Capability Expansion Toolkit** - A comprehensive collection of skills, rules, and workflows to supercharge AI coding assistants.
 
 [![Skills](https://img.shields.io/badge/Skills-35+-blue)](#-skills)
 [![Rules](https://img.shields.io/badge/Rules-10-green)](#-rules)
-[![Workflows](https://img.shields.io/badge/Workflows-1-orange)](#-workflows)
+[![Workflows](https://img.shields.io/badge/Workflows-2-orange)](#-workflows)
 
 ---
 
-## 📋 Mục lục
+## 📋 Table of Contents
 
-- [Giới thiệu](#-giới-thiệu)
-- [Cấu trúc dự án](#-cấu-trúc-dự-án)
+- [Introduction](#-introduction)
+- [Project Structure](#-project-structure)
 - [Skills](#-skills)
 - [Rules](#-rules)
 - [Workflows](#-workflows)
-- [Cài đặt](#-cài-đặt)
-- [Sử dụng](#-sử-dụng)
-- [Đóng góp](#-đóng-góp)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Credits](#-credits)
+- [Contributing](#-contributing)
 
 ---
 
-## 🎯 Giới thiệu
+## 🎯 Introduction
 
-**Antigravity Kit** là bộ sưu tập toàn diện các:
+**Antigravity Kit** is a comprehensive collection of:
 
-- **Skills** - Chuyên môn theo lĩnh vực (React, Node.js, Database, Testing...)
-- **Rules** - Quy tắc và ràng buộc hướng dẫn cách làm việc
-- **Workflows** - Quy trình từng bước cho các tác vụ phổ biến
+- **Skills** - Domain-specific expertise (React, Node.js, Database, Testing, UI/UX...)
+- **Rules** - Guidelines and constraints for agent behavior
+- **Workflows** - Step-by-step procedures for common tasks
 
-Được thiết kế để tích hợp với các AI agents hỗ trợ tiêu chuẩn **Agent Skills**.
+This toolkit combines the best of:
+- 🎨 **[UI UX Pro Max](https://ui-ux-pro-max-skill.nextlevelbuilder.io/)** - Design Intelligence with 50 styles, 21 palettes, 50 font pairings
+- 🛠️ **[ClaudeKit](https://claudekit.cc/)** - Production-ready AI subagents, workflows, and integrations
+
+Designed to integrate with AI agents supporting the **Agent Skills** standard.
 
 ---
 
-## 📁 Cấu trúc dự án
+## 📁 Project Structure
 
 ```
 antigravity-kit/
@@ -65,6 +70,7 @@ antigravity-kit/
 │   │       └── scripts/    # Python search tools
 │   │
 │   └── workflows/          # Step-by-step procedures
+│       ├── request.md
 │       └── ui-ux-pro-max.md
 │
 ├── doc.md                  # Skills documentation
@@ -76,12 +82,12 @@ antigravity-kit/
 
 ## 🧠 Skills
 
-Skills là các module chuyên môn theo lĩnh vực. Agent tự động nhận diện và sử dụng skill phù hợp với tác vụ.
+Skills are domain-specific expertise modules. The agent automatically identifies and uses the appropriate skill for each task.
 
 ### Frontend
 
-| Skill | Mô tả |
-|-------|-------|
+| Skill | Description |
+|-------|-------------|
 | `react-expert` | React 18/19, hooks, patterns, performance |
 | `nextjs-expert` | App Router, Server Components, SSR |
 | `css-expert` | CSS architecture, responsive, design systems |
@@ -90,8 +96,8 @@ Skills là các module chuyên môn theo lĩnh vực. Agent tự động nhận 
 
 ### Backend
 
-| Skill | Mô tả |
-|-------|-------|
+| Skill | Description |
+|-------|-------------|
 | `nodejs-expert` | Async patterns, modules, performance |
 | `nestjs-expert` | Module architecture, DI, testing |
 | `rest-api-expert` | RESTful design, HTTP semantics |
@@ -99,8 +105,8 @@ Skills là các module chuyên môn theo lĩnh vực. Agent tự động nhận 
 
 ### Database
 
-| Skill | Mô tả |
-|-------|-------|
+| Skill | Description |
+|-------|-------------|
 | `prisma-expert` | Schema design, migrations, queries |
 | `database-expert` | General database optimization |
 | `postgres-expert` | PostgreSQL-specific patterns |
@@ -108,8 +114,8 @@ Skills là các module chuyên môn theo lĩnh vực. Agent tự động nhận 
 
 ### Testing
 
-| Skill | Mô tả |
-|-------|-------|
+| Skill | Description |
+|-------|-------------|
 | `testing-expert` | General testing strategies |
 | `jest-expert` | Jest framework, mocking |
 | `vitest-expert` | Vitest, Vite integration |
@@ -117,8 +123,8 @@ Skills là các module chuyên môn theo lĩnh vực. Agent tự động nhận 
 
 ### DevOps & Tools
 
-| Skill | Mô tả |
-|-------|-------|
+| Skill | Description |
+|-------|-------------|
 | `devops-expert` | CI/CD, infrastructure |
 | `docker-expert` | Containerization, Compose |
 | `github-actions-expert` | GitHub Actions workflows |
@@ -126,8 +132,8 @@ Skills là các module chuyên môn theo lĩnh vực. Agent tự động nhận 
 
 ### Code Quality
 
-| Skill | Mô tả |
-|-------|-------|
+| Skill | Description |
+|-------|-------------|
 | `code-review` | Comprehensive code review |
 | `refactoring-expert` | Code smell detection, refactoring |
 | `typescript-expert` | TypeScript patterns, type system |
@@ -137,53 +143,54 @@ Skills là các module chuyên môn theo lĩnh vực. Agent tự động nhận 
 
 ## 📏 Rules
 
-Rules là các quy tắc hướng dẫn cách agent làm việc. Có 3 loại activation:
+Rules are guidelines that direct agent behavior. There are 3 activation types:
 
-- **always_on** - Luôn áp dụng
-- **model_decision** - Agent tự quyết định
-- **glob** - Áp dụng theo file pattern
+- **always_on** - Always applied
+- **model_decision** - Agent decides when to apply
+- **glob** - Applied based on file pattern
 
-### Danh sách Rules
+### Rules List
 
-| # | File | Activation | Mô tả |
-|---|------|------------|-------|
-| 1 | `01-identity.md` | Always On | Vai trò & nguyên tắc làm việc |
-| 2 | `02-task-classification.md` | Always On | Phân loại 4 loại nhiệm vụ |
-| 3 | `03-mode-consulting.md` | Model Decision | Quy trình tư vấn |
-| 4 | `04-mode-build.md` | Model Decision | Quy trình xây mới |
-| 5 | `05-mode-debug.md` | Model Decision | Quy trình sửa lỗi |
-| 6 | `06-mode-optimize.md` | Model Decision | Quy trình tối ưu |
+| # | File | Activation | Description |
+|---|------|------------|-------------|
+| 1 | `01-identity.md` | Always On | Role & working principles |
+| 2 | `02-task-classification.md` | Always On | 4 task types classification |
+| 3 | `03-mode-consulting.md` | Model Decision | Consulting process |
+| 4 | `04-mode-build.md` | Model Decision | Build process |
+| 5 | `05-mode-debug.md` | Model Decision | Debug process |
+| 6 | `06-mode-optimize.md` | Model Decision | Optimization process |
 | 7 | `07-technical-standards.md` | Always On | Coding standards |
-| 8 | `08-communication.md` | Always On | Phong cách giao tiếp |
-| 9 | `09-checklist.md` | Always On | Checklist trước khi giao |
-| 10 | `10-special-situations.md` | Always On | Xử lý tình huống đặc biệt |
+| 8 | `08-communication.md` | Always On | Communication style |
+| 9 | `09-checklist.md` | Always On | Pre-delivery checklist |
+| 10 | `10-special-situations.md` | Always On | Special situation handling |
 
 ---
 
 ## 🔄 Workflows
 
-Workflows là quy trình từng bước. Gọi bằng slash command `/workflow-name`.
+Workflows are step-by-step procedures. Invoke with slash command `/workflow-name`.
 
-| Workflow | Command | Mô tả |
-|----------|---------|-------|
-| UI/UX Pro Max | `/ui-ux-pro-max` | Thiết kế UI với 50 styles, 21 palettes |
+| Workflow | Command | Description |
+|----------|---------|-------------|
+| Request Handler | `/request` | Full-stack engineer task handling |
+| UI/UX Pro Max | `/ui-ux-pro-max` | Design UI with 50 styles, 21 palettes |
 
 ---
 
-## 📦 Cài đặt
+## 📦 Installation
 
-### Workspace-specific (khuyến nghị)
+### Workspace-specific (recommended)
 
-Copy thư mục `.agent` vào root của project:
+Copy the `.agent` folder to your project root:
 
 ```bash
-git clone https://github.com/your-username/antigravity-kit.git
+git clone https://github.com/vudovn/antigravity-kit.git
 cp -r antigravity-kit/.agent your-project/
 ```
 
-### Global (tất cả workspaces)
+### Global (all workspaces)
 
-Copy vào thư mục global:
+Copy to the global directory:
 
 ```bash
 # Skills
@@ -195,46 +202,59 @@ cp -r antigravity-kit/.agent/workflows ~/.gemini/antigravity/workflows/
 
 ---
 
-## 🚀 Sử dụng
+## 🚀 Usage
 
 ### Skills
 
-Skills tự động được áp dụng. Agent sẽ đọc skill khi nhận diện tác vụ liên quan:
+Skills are automatically applied. The agent reads the skill when it identifies a related task:
 
 ```
-User: "Fix bug trong React component này"
-Agent: (tự động sử dụng react-expert skill)
+User: "Fix bug in this React component"
+Agent: (automatically uses react-expert skill)
 ```
 
 ### Rules
 
-Rules áp dụng dựa trên activation type:
-- **always_on**: Luôn có hiệu lực
-- **model_decision**: Agent quyết định khi nào áp dụng
-- **glob**: Áp dụng khi làm việc với files matching pattern
+Rules apply based on activation type:
+- **always_on**: Always active
+- **model_decision**: Agent decides when to apply
+- **glob**: Applied when working with files matching pattern
 
 ### Workflows
 
-Gọi workflow bằng slash command:
+Invoke workflows with slash commands:
 
 ```
 User: /ui-ux-pro-max
-Agent: (thực hiện theo workflow)
+Agent: (follows the workflow)
 ```
 
 ---
 
-## 🤝 Đóng góp
+## 🙏 Credits
 
-### Thêm Skill mới
+This project is built upon and inspired by:
 
-1. Tạo folder: `.agent/skills/your-skill/`
-2. Tạo `SKILL.md` với format:
+| Project | Description | Link |
+|---------|-------------|------|
+| **UI UX Pro Max** | Design Intelligence for Claude Code - 50 styles, 21 color palettes, 50 font pairings, 20 chart types | [ui-ux-pro-max-skill.nextlevelbuilder.io](https://ui-ux-pro-max-skill.nextlevelbuilder.io/) |
+| **ClaudeKit** | Production-ready AI subagents, workflows, and integrations for software development | [claudekit.cc](https://claudekit.cc/) |
+
+Special thanks to the creators of these amazing tools for making AI-assisted development more powerful and accessible.
+
+---
+
+## 🤝 Contributing
+
+### Adding a New Skill
+
+1. Create folder: `.agent/skills/your-skill/`
+2. Create `SKILL.md` with format:
 
 ```markdown
 ---
 name: your-skill
-description: Mô tả skill. Sử dụng khi X hoặc Y.
+description: Skill description. Use when X or Y.
 ---
 
 # Your Skill
@@ -242,16 +262,16 @@ description: Mô tả skill. Sử dụng khi X hoặc Y.
 Instructions for the agent...
 ```
 
-### Thêm Rule mới
+### Adding a New Rule
 
-1. Tạo file: `.agent/rules/your-rule.md`
-2. Thêm frontmatter:
+1. Create file: `.agent/rules/your-rule.md`
+2. Add frontmatter:
 
 ```markdown
 ---
 activation: always_on | model_decision | glob
-glob: "**/*.tsx"  # nếu dùng glob
-description: Mô tả khi nào áp dụng  # nếu dùng model_decision
+glob: "**/*.tsx"  # if using glob
+description: When to apply  # if using model_decision
 ---
 
 # Your Rule
@@ -259,14 +279,14 @@ description: Mô tả khi nào áp dụng  # nếu dùng model_decision
 Content...
 ```
 
-### Thêm Workflow mới
+### Adding a New Workflow
 
-1. Tạo file: `.agent/workflows/your-workflow.md`
+1. Create file: `.agent/workflows/your-workflow.md`
 2. Format:
 
 ```markdown
 ---
-description: Mô tả workflow
+description: Workflow description
 ---
 
 # Your Workflow
@@ -279,10 +299,16 @@ description: Mô tả workflow
 
 ## 📄 License
 
-MIT License - Xem [LICENSE](LICENSE) để biết thêm chi tiết.
+MIT License - See [LICENSE](LICENSE) for details.
 
 ---
 
 <p align="center">
   Made with ❤️ by <a href="https://github.com/vudovn">VudoVN</a>
+</p>
+
+<p align="center">
+  <a href="https://img.vietqr.io/image/mbbank-0779330918-compact2.jpg">
+    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee" />
+  </a>
 </p>

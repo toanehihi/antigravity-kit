@@ -4,40 +4,40 @@ activation: always_on
 
 # Special Situations
 
-Cách xử lý các tình huống đặc biệt.
+How to handle special situations.
 
-## 1. Phát Hiện Vấn Đề Nghiêm Trọng
+## 1. Discovering Serious Issues
 
 ```markdown
-⚠️ **Cảnh báo:** Phát hiện vấn đề tiềm ẩn:
+⚠️ **Warning:** Potential issue detected:
 
-**Vấn đề:** [mô tả]
-**Vị trí:** `[file:line]`
-**Mức độ:** [Critical / High / Medium / Low]
-**Khuyến nghị:** [action]
+**Issue:** [description]
+**Location:** `[file:line]`
+**Severity:** [Critical / High / Medium / Low]
+**Recommendation:** [action]
 
-Xử lý vấn đề này trước hay tiếp tục yêu cầu ban đầu?
+Handle this issue first or continue with the original request?
 ```
 
-## 2. Yêu Cầu Vượt Quá Khả Năng
+## 2. Request Exceeds Capabilities
 
 ```markdown
-🔄 Yêu cầu vượt quá phạm vi hỗ trợ vì:
-- [Lý do]
+🔄 This request exceeds support scope because:
+- [Reason]
 
-**Gợi ý thay thế:**
-1. [Giải pháp 1]
-2. [Giải pháp 2]
+**Alternative suggestions:**
+1. [Solution 1]
+2. [Solution 2]
 ```
 
-## 3. Cần Thêm Context
+## 3. Need More Context
 
 ```markdown
-📋 Cần thêm thông tin:
-1. [Câu hỏi]?
-2. [Câu hỏi]?
+📋 Need more information:
+1. [Question]?
+2. [Question]?
 
-Hoặc proceed với assumptions:
+Or proceed with assumptions:
 - [Assumption]
 ```
 
@@ -46,36 +46,36 @@ Hoặc proceed với assumptions:
 ```markdown
 ⚠️ **BREAKING CHANGE**
 
-Ảnh hưởng đến:
+Affects:
 - [ ] API contracts
 - [ ] Database schema
 - [ ] UI components
 
-**Files:** [danh sách]
+**Files:** [list]
 
 **Migration steps:**
 1. [Step]
 2. [Step]
 
-**Xác nhận proceed?**
+**Confirm to proceed?**
 ```
 
 ## FAQ
 
-**Q: Khi nào hỏi lại user?**
-- Thiếu thông tin quan trọng
-- Nhiều cách hiểu khác nhau
-- Có breaking changes
-- Cần trade-off
+**Q: When to ask the user?**
+- Missing important information
+- Multiple interpretations possible
+- Breaking changes involved
+- Trade-offs needed
 
-**Q: Đề xuất cải tiến ngoài yêu cầu?**
-Chỉ **ĐỀ XUẤT** khi:
-- Phát hiện vấn đề nghiêm trọng
-- Thay đổi nhỏ, cải thiện lớn
-- Liên quan trực tiếp task
+**Q: Suggest improvements outside scope?**
+Only **SUGGEST** when:
+- Serious issue detected
+- Small change, big improvement
+- Directly related to task
 
-**Q: Gặp legacy code xấu?**
-1. Làm đúng task trước
-2. Ghi chú vấn đề
-3. Đề xuất refactor riêng
-4. KHÔNG tự ý refactor
+**Q: Encountering bad legacy code?**
+1. Complete the task first
+2. Note the issues
+3. Suggest separate refactor
+4. DO NOT refactor unilaterally

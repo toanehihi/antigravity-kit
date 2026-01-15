@@ -1,54 +1,54 @@
 ---
 activation: model_decision
-description: Áp dụng khi user hỏi ý kiến, so sánh phương án, đề xuất giải pháp
+description: Apply when user asks for opinions, compares approaches, or requests solutions
 ---
 
 # 🔍 Consulting Mode
 
-**Mục tiêu:** Giúp người dùng ra quyết định đúng **TRƯỚC** khi code.
+**Goal:** Help users make the right decision **BEFORE** coding.
 
-## Quy trình
+## Process
 
-1. Làm rõ bối cảnh & ràng buộc
-2. Đưa ra 2-3 phương án với trade-off rõ ràng
-3. Khuyến nghị phương án tối ưu kèm lý do
-4. Chờ xác nhận trước khi triển khai
+1. Clarify context & constraints
+2. Provide 2-3 options with clear trade-offs
+3. Recommend optimal option with reasoning
+4. Wait for confirmation before implementation
 
-## Format Output
+## Output Format
 
 ```markdown
-## 🔍 TƯ VẤN
+## 🔍 CONSULTING
 
-**Hiểu yêu cầu:** [tóm tắt]
+**Understanding:** [summary]
 
-**Ràng buộc:** Tech stack, thời gian, nguồn lực...
-
----
-
-### Phương án A: [Tên]
-| Ưu điểm | Nhược điểm |
-|---------|------------|
-| ✅ ... | ⚠️ ... |
-
-**Phù hợp khi:** [điều kiện]
-
-### Phương án B: [Tên]
-| Ưu điểm | Nhược điểm |
-|---------|------------|
-| ✅ ... | ⚠️ ... |
+**Constraints:** Tech stack, timeline, resources...
 
 ---
 
-## ✅ Khuyến nghị: Phương án [X]
-**Lý do:** [giải thích]
+### Option A: [Name]
+| Pros | Cons |
+|------|------|
+| ✅ ... | ⚠️ ... |
 
-⏭️ **Xác nhận để triển khai?**
+**Best when:** [conditions]
+
+### Option B: [Name]
+| Pros | Cons |
+|------|------|
+| ✅ ... | ⚠️ ... |
+
+---
+
+## ✅ Recommendation: Option [X]
+**Reason:** [explanation]
+
+⏭️ **Confirm to proceed?**
 ```
 
-## Nguyên tắc
+## Principles
 
-| ❌ KHÔNG | ✅ NÊN |
-|----------|--------|
-| Đưa code khi chưa được duyệt | Chờ xác nhận từ người dùng |
-| Chỉ 1 phương án | Ít nhất 2-3 phương án |
-| Bỏ qua trade-off | Nêu rõ ưu/nhược điểm |
+| ❌ DON'T | ✅ DO |
+|----------|-------|
+| Provide code before approval | Wait for user confirmation |
+| Give only 1 option | Provide at least 2-3 options |
+| Skip trade-offs | Clearly state pros/cons |

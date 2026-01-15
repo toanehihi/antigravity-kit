@@ -1,36 +1,36 @@
 ---
 activation: model_decision
-description: Áp dụng khi user yêu cầu refactor, optimize, cải thiện performance
+description: Apply when user requests refactoring, optimization, or performance improvement
 ---
 
 # ⚡ Optimize Mode
 
-**Mục tiêu:** Cải thiện chất lượng mà **KHÔNG thay đổi hành vi** (behavior).
+**Goal:** Improve quality **WITHOUT changing behavior**.
 
-## Quy trình
+## Process
 
-1. Đo lường hiện trạng (baseline)
-2. Xác định bottleneck chính
-3. Đề xuất cải tiến + dự đoán kết quả
-4. Refactor theo thứ tự ưu tiên
-5. So sánh trước/sau
-6. Đảm bảo tests vẫn pass
+1. Measure current state (baseline)
+2. Identify main bottleneck
+3. Propose improvements + predict results
+4. Refactor by priority order
+5. Compare before/after
+6. Ensure tests still pass
 
-## Tiêu Chí Đánh Giá
+## Evaluation Criteria
 
-| Tiêu chí | Công cụ | Ngưỡng tốt |
-|----------|---------|------------|
+| Criterion | Tool | Good Threshold |
+|-----------|------|----------------|
 | Bundle size | `npm run build` | < 500KB |
 | Render time | React DevTools | < 16ms |
-| Memory | Chrome DevTools | Không leak |
+| Memory | Chrome DevTools | No leaks |
 | Complexity | ESLint | Cyclomatic < 10 |
 
-## Format Output
+## Output Format
 
 ```markdown
-## ⚡ TỐI ƯU
+## ⚡ OPTIMIZE
 
-**Vấn đề:** [chậm / code lặp / khó maintain]
+**Issue:** [slow / duplicate code / hard to maintain]
 
 **Baseline:**
 - Bundle: X KB
@@ -40,25 +40,25 @@ description: Áp dụng khi user yêu cầu refactor, optimize, cải thiện pe
 ---
 
 ### Bottleneck:
-| Vấn đề | Vị trí | Mức độ |
-|--------|--------|--------|
-| [Mô tả] | `file:line` | 🔴 Cao |
+| Issue | Location | Severity |
+|-------|----------|----------|
+| [Description] | `file:line` | 🔴 High |
 
-### Đề xuất:
-| Hạng mục | Trước | Sau | Δ |
-|----------|-------|-----|---|
+### Proposal:
+| Item | Before | After | Δ |
+|------|--------|-------|---|
 | Bundle | 800KB | 450KB | -44% |
 
 ### Regression Check:
-- [ ] Tests vẫn pass
-- [ ] Behavior không đổi
+- [ ] Tests still pass
+- [ ] Behavior unchanged
 ```
 
-## Nguyên tắc
+## Principles
 
-| ❌ KHÔNG | ✅ NÊN |
-|----------|--------|
-| Tối ưu sớm | Đo trước, tối ưu sau |
-| Thay đổi behavior | Giữ nguyên behavior |
-| Ưu tiên cleverness | Readability > Performance |
-| Bỏ qua tests | Chạy lại tests |
+| ❌ DON'T | ✅ DO |
+|----------|-------|
+| Optimize prematurely | Measure first, optimize later |
+| Change behavior | Keep behavior unchanged |
+| Prioritize cleverness | Readability > Performance |
+| Skip tests | Re-run tests |

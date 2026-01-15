@@ -1,66 +1,66 @@
 ---
 activation: model_decision
-description: Áp dụng khi user báo lỗi, bug, error cần fix
+description: Apply when user reports bugs, errors that need fixing
 ---
 
 # 🔧 Debug Mode
 
-**Mục tiêu:** Tìm đúng nguyên nhân, sửa đúng chỗ, phòng ngừa tái phát.
+**Goal:** Find the correct cause, fix the right place, prevent recurrence.
 
-## Quy trình
+## Process
 
-1. Thu thập thông tin (5W1H)
-2. Tái hiện lỗi (reproduce)
-3. Phân tích nguyên nhân gốc (root cause)
-4. Đề xuất cách sửa + giải thích
-5. Đề xuất cách phòng ngừa
+1. Gather information (5W1H)
+2. Reproduce the bug
+3. Analyze root cause
+4. Propose fix + explanation
+5. Propose prevention measures
 
-## Câu Hỏi Bắt Buộc Nếu Thiếu Thông Tin
+## Required Questions If Information Is Missing
 
-1. Error message cụ thể? (Copy nguyên văn)
-2. Xảy ra ở màn hình/chức năng nào?
-3. Có thể tái hiện? Các bước cụ thể?
-4. Có thay đổi code gì gần đây?
-5. Console log có gì bất thường?
+1. Exact error message? (Copy verbatim)
+2. Which screen/feature does it occur on?
+3. Can it be reproduced? Specific steps?
+4. Any recent code changes?
+5. Anything unusual in console log?
 
-## Format Output
+## Output Format
 
 ```markdown
-## 🔧 SỬA LỖI
+## 🔧 DEBUG
 
-**Triệu chứng:** [mô tả lỗi]
+**Symptom:** [error description]
 
-**Tái hiện:**
-1. [Bước 1]
-2. [Bước 2]
-3. [Lỗi xuất hiện]
+**Reproduction:**
+1. [Step 1]
+2. [Step 2]
+3. [Error appears]
 
 ---
 
-### Phân tích:
-**Root Cause:** [nguyên nhân gốc]
-**Vị trí:** `[file:line]`
+### Analysis:
+**Root Cause:** [root cause]
+**Location:** `[file:line]`
 
-### Cách sửa:
+### Fix:
 ```diff
-- [code cũ]
-+ [code mới]
+- [old code]
++ [new code]
 ```
 
-**Lý do:** [giải thích]
+**Reason:** [explanation]
 
-### Phòng ngừa:
-| Đề xuất | Ưu tiên |
-|---------|---------|
-| [Thêm validation] | 🔴 Cao |
-| [Viết unit test] | 🟡 TB |
+### Prevention:
+| Suggestion | Priority |
+|------------|----------|
+| [Add validation] | 🔴 High |
+| [Write unit test] | 🟡 Medium |
 ```
 
-## Nguyên tắc
+## Principles
 
-| ❌ KHÔNG | ✅ NÊN |
-|----------|--------|
-| Đoán mò | Yêu cầu log/screenshot |
-| Refactor lung tung | Sửa đúng chỗ, minimal change |
-| Fix xong rồi thôi | Đề xuất phòng ngừa |
-| Sửa triệu chứng | Tìm fix root cause |
+| ❌ DON'T | ✅ DO |
+|----------|-------|
+| Guess randomly | Request log/screenshot |
+| Refactor randomly | Fix the right place, minimal change |
+| Stop after fixing | Propose prevention |
+| Fix symptoms | Find and fix root cause |

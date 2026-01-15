@@ -4,26 +4,26 @@ activation: always_on
 
 # Pre-Delivery Checklist
 
-Checklist bắt buộc trước khi giao code.
+Mandatory checklist before delivering code.
 
-## Chất lượng Code
+## Code Quality
 
-- [ ] Không có `any` type
-- [ ] Không hardcode magic numbers/strings
-- [ ] Error handling đầy đủ
-- [ ] Đặt tên biến/hàm rõ nghĩa
-- [ ] Không có code duplicate
+- [ ] No `any` type
+- [ ] No hardcoded magic numbers/strings
+- [ ] Complete error handling
+- [ ] Clear variable/function naming
+- [ ] No duplicate code
 
-## Cấu trúc
+## Structure
 
-- [ ] Đúng folder structure
-- [ ] Đúng naming convention
-- [ ] < 200 lines/file (khuyến nghị)
+- [ ] Correct folder structure
+- [ ] Correct naming convention
+- [ ] < 200 lines/file (recommended)
 - [ ] Single Responsibility Principle
 
-## UI/UX (nếu có)
+## UI/UX (if applicable)
 
-- [ ] Đúng Design System
+- [ ] Follows Design System
 - [ ] Responsive (mobile-first)
 - [ ] Loading states
 - [ ] Error states
@@ -32,14 +32,14 @@ Checklist bắt buộc trước khi giao code.
 
 ## Maintainability
 
-- [ ] Comment tại logic phức tạp
+- [ ] Comments at complex logic
 - [ ] Testable
 - [ ] Extensible
-- [ ] Không side effects không mong muốn
+- [ ] No unintended side effects
 
 ## Performance
 
-- [ ] Không unnecessary re-renders
-- [ ] Lazy loading cho heavy components
+- [ ] No unnecessary re-renders
+- [ ] Lazy loading for heavy components
 - [ ] Optimized images
 - [ ] No memory leaks

@@ -4,35 +4,35 @@ activation: always_on
 
 # Technical Standards
 
-Quy chuẩn kỹ thuật áp dụng cho toàn bộ mã nguồn.
+Technical standards applied to all source code.
 
 ## 1. Naming Conventions
 
-- **Ngôn ngữ:** Tiếng Anh 100% cho tên biến, hàm, class
-- **camelCase:** biến, hàm (`userId`, `calculateTotal`)
+- **Language:** 100% English for variable names, functions, classes
+- **camelCase:** variables, functions (`userId`, `calculateTotal`)
 - **PascalCase:** Class, Interface, Component (`UserController`)
 - **SCREAMING_SNAKE_CASE:** Constants (`MAX_RETRY`)
-- **Boolean:** prefix `is`, `has`, `can`, `should`
+- **Boolean:** prefix with `is`, `has`, `can`, `should`
 
 ✅ `customerAddress`, `isValid`, `fetchUserData()`
 ❌ `addr`, `val`, `func1()`
 
 ## 2. Function & Logic Flow
 
-- **Early Return:** Tránh if/else lồng sâu, return sớm
-- **Single Responsibility:** 1 hàm = 1 việc
+- **Early Return:** Avoid deep if/else nesting, return early
+- **Single Responsibility:** 1 function = 1 task
 - **Max 30-50 lines/function**
-- **Max 3 parameters**, nếu nhiều hơn dùng Object
+- **Max 3 parameters**, use Object if more needed
 
 ```javascript
-// ✅ Tốt
+// ✅ Good
 function process(order) {
   if (!order) return false;
   if (!order.isValid) return false;
   return executeTransaction(order);
 }
 
-// ❌ Xấu - Arrow code
+// ❌ Bad - Arrow code
 function process(order) {
   if (order) {
     if (order.isValid) {
@@ -45,17 +45,17 @@ function process(order) {
 
 ## 3. Type Safety
 
-- **Không Magic Numbers:** ❌ `if (status == 1)` ✅ `if (status == ORDER_STATUS.PENDING)`
-- **Strict Typing:** Khai báo types cho params và return
-- **Immutability:** Tạo bản sao thay vì mutate data
+- **No Magic Numbers:** ❌ `if (status == 1)` ✅ `if (status == ORDER_STATUS.PENDING)`
+- **Strict Typing:** Declare types for params and return values
+- **Immutability:** Create copies instead of mutating data
 
 ## 4. Error Handling
 
-- **Không "nuốt" lỗi:** Luôn log trong try/catch
+- **Don't swallow errors:** Always log in try/catch
 - **Structured Logging:** `logger.error('Failed', { context })`
-- **Fail Fast:** Báo lỗi ngay khi phát hiện vấn đề nghiêm trọng
+- **Fail Fast:** Report errors immediately when serious issues are detected
 
 ## 5. Comments
 
-- **Why > What:** Comment giải thích LÝ DO, không phải CÁI GÌ
-- **TODO/FIXME:** Đánh dấu việc chưa xong
+- **Why > What:** Comments explain the REASON, not the WHAT
+- **TODO/FIXME:** Mark incomplete work
