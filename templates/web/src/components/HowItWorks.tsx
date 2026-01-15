@@ -1,95 +1,138 @@
-// Step Icons
-const FolderIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-        <path d="M19.906 9c.382 0 .749.057 1.094.162V9a3 3 0 0 0-3-3h-3.879a.75.75 0 0 1-.53-.22L11.47 3.66A2.25 2.25 0 0 0 9.879 3H6a3 3 0 0 0-3 3v3.162A3.756 3.756 0 0 1 4.094 9h15.812ZM4.094 10.5a2.25 2.25 0 0 0-2.227 2.568l.857 6A2.25 2.25 0 0 0 4.951 21H19.05a2.25 2.25 0 0 0 2.227-1.932l.857-6a2.25 2.25 0 0 0-2.227-2.568H4.094Z" />
+"use client";
+
+import { useState } from "react";
+
+// Icons
+const CopyIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+        <path d="M7 3.5A1.5 1.5 0 0 1 8.5 2h3.879a1.5 1.5 0 0 1 1.06.44l3.122 3.12A1.5 1.5 0 0 1 17 6.622V12.5a1.5 1.5 0 0 1-1.5 1.5h-1v-3.379a3 3 0 0 0-.879-2.121L10.5 5.379A3 3 0 0 0 8.379 4.5H7v-1Z" />
+        <path d="M4.5 6A1.5 1.5 0 0 0 3 7.5v9A1.5 1.5 0 0 0 4.5 18h7a1.5 1.5 0 0 0 1.5-1.5v-5.879a1.5 1.5 0 0 0-.44-1.06L9.44 6.439A1.5 1.5 0 0 0 8.378 6H4.5Z" />
     </svg>
 );
 
-const CommandLineIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-        <path fillRule="evenodd" d="M2.25 6a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V6Zm3.97.97a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06l-2.25 2.25a.75.75 0 0 1-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 0 1 0-1.06Zm4.28 4.28a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" clipRule="evenodd" />
+const CheckIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+        <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" />
     </svg>
 );
 
-const RocketLaunchIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-        <path fillRule="evenodd" d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 0 1 .75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 0 1 9.75 22.5a.75.75 0 0 1-.75-.75v-4.131A15.838 15.838 0 0 1 6.382 15H2.25a.75.75 0 0 1-.75-.75 6.75 6.75 0 0 1 7.815-6.666ZM15 6.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z" clipRule="evenodd" />
-        <path d="M5.26 17.242a.75.75 0 1 0-.897-1.203 5.243 5.243 0 0 0-2.05 5.022.75.75 0 0 0 .625.627 5.243 5.243 0 0 0 5.022-2.051.75.75 0 1 0-1.202-.897 3.744 3.744 0 0 1-3.008 1.51c0-1.23.592-2.323 1.51-3.008Z" />
-    </svg>
+// Terminal dots component
+const TerminalDots = () => (
+    <div className="flex items-center gap-1.5">
+        <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
+        <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
+        <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
+    </div>
 );
 
 const steps = [
     {
-        icon: <FolderIcon />,
-        title: "Navigate to Your Project",
-        description: "Open terminal in your project directory",
-        code: "cd your-project",
+        title: "Navigate to project",
+        command: "cd",
+        args: "your-project",
+        copyable: false,
     },
     {
-        icon: <CommandLineIcon />,
-        title: "Install with NPX",
-        description: "Run the CLI to install .agent folder",
-        code: "npx @vudovn/antigravity-kit init",
+        title: "Install the kit",
+        command: "npx",
+        args: "@vudovn/antigravity-kit init",
+        copyable: true,
     },
     {
-        icon: <RocketLaunchIcon />,
-        title: "Start Using",
-        description: "Skills auto-apply, invoke workflows with slash commands",
-        code: "Your prompt",
+        title: "Start coding",
+        command: "# Ready!",
+        args: "Skills auto-apply",
+        copyable: false,
+        isComment: true,
     },
 ];
 
 export default function HowItWorks() {
+    const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
+
+    const handleCopy = async (command: string, args: string, index: number) => {
+        await navigator.clipboard.writeText(`${command} ${args}`);
+        setCopiedIndex(index);
+        setTimeout(() => setCopiedIndex(null), 2000);
+    };
+
     return (
         <section id="how-it-works" className="section relative overflow-hidden">
-            {/* Background Glow */}
-            <div className="bg-glow bg-glow-accent right-0 top-0 translate-x-1/2" />
-
             <div className="container-content relative z-10">
                 {/* Section Header */}
-                <div className="text-center mb-16">
+                <div className="text-center mb-12">
+                    <p className="text-[#c084fc] font-mono text-sm mb-3 tracking-wider">// QUICK START</p>
                     <h2 className="heading-lg mb-4">
-                        Get Started in <span className="gradient-text">3 Steps</span>
+                        Get Started in <span className="text-[#22c55e]">3 Steps</span>
                     </h2>
-                    <p className="text-body max-w-2xl mx-auto">
-                        Simple installation process to unlock powerful AI agent
-                        capabilities in your project.
+                    <p className="text-body max-w-xl mx-auto">
+                        One command to unlock 35+ expert skills for your AI coding assistant.
                     </p>
                 </div>
 
-                {/* Steps */}
-                <div className="grid md:grid-cols-3 gap-8">
-                    {steps.map((step, index) => (
-                        <div key={index} className="relative">
-                            {/* Step Number */}
-                            <div className="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-white font-bold text-sm">
-                                {index + 1}
-                            </div>
+                {/* Terminal Window */}
+                <div className="max-w-2xl mx-auto">
+                    {/* Terminal Header */}
+                    <div className="bg-[#1e1e1e] rounded-t-xl px-4 py-3 flex items-center justify-between border-b border-[#333]">
+                        <TerminalDots />
+                        <span className="text-[#6b7280] text-sm font-mono">Terminal</span>
+                        <div className="w-12" /> {/* Spacer for balance */}
+                    </div>
 
-                            <div className="glass-card p-6 h-full">
-                                {/* Icon */}
-                                <div className="icon-wrapper mb-4">{step.icon}</div>
+                    {/* Terminal Body */}
+                    <div className="bg-[#0d0d0d] rounded-b-xl p-6 font-mono text-sm border border-t-0 border-[#333]">
+                        {steps.map((step, index) => (
+                            <div
+                                key={index}
+                                className={`group flex items-start gap-3 ${index !== steps.length - 1 ? 'mb-4' : ''
+                                    }`}
+                            >
+                                {/* Line number */}
+                                <span className="text-[#4a5568] select-none w-6 text-right shrink-0">
+                                    {index + 1}
+                                </span>
 
-                                {/* Title */}
-                                <h3 className="heading-md mb-2">{step.title}</h3>
+                                {/* Command line */}
+                                <div className="flex-1 flex items-center gap-2">
+                                    {/* Prompt symbol */}
+                                    <span className="text-[#22c55e]">$</span>
 
-                                {/* Description */}
-                                <p className="text-body text-sm mb-4">{step.description}</p>
+                                    {/* Command */}
+                                    <span className={step.isComment ? "text-[#6b7280]" : "text-[#c084fc]"}>
+                                        {step.command}
+                                    </span>
 
-                                {/* Code Block */}
-                                <div className="code-block">
-                                    <code className="text-[var(--color-accent)]">{step.code}</code>
+                                    {/* Arguments */}
+                                    <span className={step.isComment ? "text-[#6b7280]" : "text-[#f8fafc]"}>
+                                        {step.args}
+                                    </span>
+
+                                    {/* Copy button */}
+                                    {step.copyable && (
+                                        <button
+                                            onClick={() => handleCopy(step.command, step.args, index)}
+                                            className="ml-auto opacity-0 group-hover:opacity-100 p-1.5 rounded hover:bg-white/10 transition-all text-[#6b7280] hover:text-[#c084fc] cursor-pointer"
+                                            aria-label="Copy to clipboard"
+                                        >
+                                            {copiedIndex === index ? (
+                                                <span className="text-[#22c55e]"><CheckIcon /></span>
+                                            ) : (
+                                                <CopyIcon />
+                                            )}
+                                        </button>
+                                    )}
                                 </div>
                             </div>
+                        ))}
 
-                            {/* Connector Line (not on last item) */}
-                            {index < steps.length - 1 && (
-                                <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-[2px] bg-[var(--color-border)]" />
-                            )}
+                        {/* Cursor blink */}
+                        <div className="flex items-center gap-3 mt-4">
+                            <span className="text-[#4a5568] select-none w-6 text-right shrink-0">4</span>
+                            <span className="text-[#22c55e]">$</span>
+                            <span className="w-2 h-5 bg-[#22c55e] animate-pulse" />
                         </div>
-                    ))}
+                    </div>
                 </div>
-
             </div>
         </section>
     );
