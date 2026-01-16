@@ -27,15 +27,15 @@ const TerminalDots = () => (
 
 const steps = [
     {
-        title: "Navigate to project",
-        command: "cd",
-        args: "your-project",
-        copyable: false,
+        title: "Install globally",
+        command: "npm",
+        args: "install -g @vudovn/antigravity-kit",
+        copyable: true,
     },
     {
-        title: "Install the kit",
-        command: "npx",
-        args: "@vudovn/antigravity-kit init",
+        title: "Initialize in your project",
+        command: "ag-kit",
+        args: "init",
         copyable: true,
     },
     {

@@ -136,9 +136,19 @@ Workflows are step-by-step procedures. Invoke with slash command `/workflow-name
 
 ## 📦 Installation
 
-### Using CLI (Recommended)
+### Install Global (Recommended)
 
-Install the `.agent` folder directly into your project using `npx`:
+```bash
+# Install globally
+npm install -g @vudovn/antigravity-kit
+
+# Then use commands anywhere
+ag-kit init
+ag-kit update
+ag-kit status
+```
+
+### Using npx (No Install)
 
 ```bash
 # Navigate to your project
@@ -148,13 +158,33 @@ cd your-project
 npx @vudovn/antigravity-kit init
 ```
 
-#### CLI Commands
+### CLI Commands
 
 | Command | Description |
 |---------|-------------|
-| `npx @vudovn/antigravity-kit init` | Install `.agent` folder into current directory |
-| `npx @vudovn/antigravity-kit update` | Update `.agent` to the latest version |
-| `npx @vudovn/antigravity-kit status` | Check installation status |
+| `ag-kit init` | Install `.agent` folder into current directory |
+| `ag-kit update` | Update `.agent` to the latest version |
+| `ag-kit status` | Check installation status |
+
+#### Command Options
+
+```bash
+# init options
+ag-kit init [options]
+  -f, --force           # Overwrite if folder already exists
+  -p, --path <dir>      # Path to the project directory
+  -b, --branch <name>   # Select repository branch
+
+# update options
+ag-kit update [options]
+  -f, --force           # Skip confirmation prompt
+  -p, --path <dir>      # Path to the project directory
+  -b, --branch <name>   # Select repository branch
+
+# status options
+ag-kit status [options]
+  -p, --path <dir>      # Path to the project directory
+```
 
 ---
 

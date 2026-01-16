@@ -42,8 +42,8 @@ export default function Hero() {
     const [scrollY, setScrollY] = useState(0);
     const [typedText, setTypedText] = useState("");
     const [showCursor, setShowCursor] = useState(true);
-    const installCommand = "npx @vudovn/antigravity-kit init";
-    const fullCommand = "@vudovn/antigravity-kit init";
+    const installCommand = "npm install -g @vudovn/antigravity-kit";
+    const fullCommand = "install -g @vudovn/antigravity-kit";
 
     // Parallax scroll effect
     useEffect(() => {
@@ -236,7 +236,7 @@ export default function Hero() {
                         <div className="p-4 flex items-center justify-between gap-4">
                             <code className="font-mono text-sm md:text-base">
                                 <span className="text-[#22c55e]">$</span>{" "}
-                                <span className="text-[#c084fc]">npx</span>{" "}
+                                <span className="text-[#c084fc]">npm</span>{" "}
                                 <span className="text-white">{typedText}</span>
                                 {showCursor && <span className="typing-cursor" />}
                             </code>

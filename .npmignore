@@ -1,9 +1,10 @@
 # .npmignore
 node_modules
 .git
-# .gitignore
+.gitignore
 .temp_ag_kit
 test
 src
 .env
 .DS_Store
+/templates/web
